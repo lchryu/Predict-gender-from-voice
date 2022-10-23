@@ -59,8 +59,8 @@ def cm2pr_binary(cm):
 
 # model evaluation
 acc = accuracy_score(y_test1, y_pred1) #do cxac
-# precision = ti le so diem true positive (TP) trong nhung diem duoc phan loai positive (TP+FP)
-# recall = ti le so diem true positive (TP) trong nhung diem thuc su la positive (TP+FN)
+# precision = (TP)/(TP+FP)
+# recall = (TP)/(TP+FN)
 precision,recall = cm2pr_binary(cnf_matrix)
 # f1-score is a combination of precision and recall
 f1_score = (2 * precision * recall) / (precision + recall)

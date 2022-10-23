@@ -8,6 +8,7 @@ def Predict_from_user_data(main_pca, mainModel):
         # GUI
         win = inp.Tk()
         win.attributes("-topmost", True) #luôn luôn ghim của sổ trên màn hình
+        win.geometry("280x500")
         win.title('Nhập thông tin: ')
 
         inp.Label(win, text="meanfreq:").grid(row=0)
@@ -122,7 +123,7 @@ def Predict_from_user_data(main_pca, mainModel):
             e21.insert(0, kq)
 
         inp.Button(win,text ="Dự đoán", command = predict,activebackground='green',
-                justify='center').grid(row=20, column=1)
+                justify='center', bg = 'green', fg = 'white').grid(row=20, column=1)
         win.mainloop()
     else:
         os.system("cls")
