@@ -49,12 +49,6 @@ mainModel = DecisionTreeClassifier(criterion = "gini")
 mainModel.fit(X_train1, y_train1)
 y_pred1 = mainModel.predict(X_test1)
 
-# # ma tran nham lan
-# #                                        predict
-# #                      |     positive        |    negative
-# #    ------------------|---------------------|--------------
-# #      true | positive |  True positive (TP) | False Negative (FN)
-# #           | negative |  False positive (FP)| True Negative (TN)
 
 cnf_matrix = confusion_matrix(y_test1, y_pred1)
 print('Confusion matrix:')
