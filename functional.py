@@ -1,6 +1,8 @@
-import tkinter as inp #giao dien
+import numpy as np
+import tkinter as inp
 from tkinter.ttk import *
-def Predict_from_user_data():
+import os
+def Predict_from_user_data(main_pca, mainModel):
     option = input("Bạn có muốn dự đoán giới tính từ dữ liệu người dùng nhập vào?(y/n): ")
     if (option == 'y'):
         # GUI
