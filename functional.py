@@ -1,5 +1,4 @@
 import tkinter as inp #giao dien
-from tkinter import *
 from tkinter.ttk import *
 def Predict_from_user_data():
     option = input("Bạn có muốn dự đoán giới tính từ dữ liệu người dùng nhập vào?(y/n): ")
