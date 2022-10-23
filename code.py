@@ -6,11 +6,32 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 import tkinter as inp
+import matplotlib.pyplot as plt
 from tkinter.ttk import *
+import seaborn as sns
 import os
 from functional import Predict_from_user_data
+
+sns.set()
 os.system("cls")
+
 df = pd.read_csv("voice.csv")
+
+# # 1.Kiểm tra tập dữ liệu có bị thiếu giá trị không
+# import missingno as msno
+# p = msno.bar(df)
+# plt.show()
+
+
+# # 2.Kiểm tra tập dữ liệu nhãn (Nhãn 0 có 1584 dữ liệu, nhãn 1 có 1584 dữ liệu)
+# sns.countplot(y=df.label, data=df)
+# plt.xlabel("Count of each Target class")
+# plt.ylabel("Target classes")
+# plt.show()
+
+
+
+
 X = np.array(df.drop(columns=['label']))
 y = np.array([df["label"]]).T
 
