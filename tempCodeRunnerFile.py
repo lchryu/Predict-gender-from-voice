@@ -1,51 +1,85 @@
+master = inp.Tk()
+master.title('Nhập thông tin: ')
 
-inp.Label(master, text="Thiếu máu (0-không, 1-có):").grid(row=1)
+inp.Label(master, text="meanfreq:").grid(row=0)
+e1 = Entry(master, width=30)
+e1.grid(row=0, column=1)
+
+inp.Label(master, text="sd").grid(row=1)
 e2 = Entry(master, width=30)
 e2.grid(row=1, column=1)
 
-inp.Label(master, text="Enzym CPK trong máu (mcg/l):").grid(row=2)
+inp.Label(master, text="median").grid(row=2)
 e3 = Entry(master, width=30)
 e3.grid(row=2, column=1)
 
-inp.Label(master, text="Tiểu đường (0-không, 1-có):").grid(row=3)
+inp.Label(master, text="Q25").grid(row=3)
 e4 = Entry(master, width=30)
 e4.grid(row=3, column=1)
 
-inp.Label(master, text="Lượng máu rời khỏi tim mỗi lần co bóp (%):").grid(row=4)
+inp.Label(master, text="Q75").grid(row=4)
 e5 = Entry(master, width=30)
 e5.grid(row=4, column=1)
 
-inp.Label(master, text="Cao huyết áp (0-không, 1-có):").grid(row=5)
+inp.Label(master, text="IQR").grid(row=5)
 e6 = Entry(master, width=30)
 e6.grid(row=5, column=1)
 
-inp.Label(master, text="Tiểu cầu trong máu (kilophat tiểu cầu / ml):").grid(row=6)
+inp.Label(master, text="skew").grid(row=6)
 e7 = Entry(master, width=30)
 e7.grid(row=6, column=1)
 
-inp.Label(master, text="Huyết thanh creatinine trong máu (mg/dl):").grid(row=7)
+inp.Label(master, text="kurt").grid(row=7)
 e8 = Entry(master, width=30)
 e8.grid(row=7, column=1)
 
-inp.Label(master, text="Huyết thanh sodium trong máu (mEq/l):").grid(row=8)
+inp.Label(master, text="sp.ent").grid(row=8)
 e9 = Entry(master, width=30)
 e9.grid(row=8, column=1)
 
-inp.Label(master, text="Giới tính (0-nam, 1-nữ):").grid(row=9)
+inp.Label(master, text="sfm").grid(row=9)
 e10 = Entry(master, width=30)
 e10.grid(row=9, column=1)
 
-inp.Label(master, text="Hút thuốc (0-không, 1-có):").grid(row=10)
+inp.Label(master, text="mode").grid(row=10)
 e11 = Entry(master, width=30)
 e11.grid(row=10, column=1)
 
-inp.Label(master, text="Thời gian theo dõi (ngày):").grid(row=11)
+inp.Label(master, text="centroid").grid(row=11)
 e12 = Entry(master, width=30)
 e12.grid(row=11, column=1)
 
-inp.Label(master, text="Dự đoán tử vong (0-không, 1-có)").grid(row=13)
+inp.Label(master, text="peakf").grid(row=12)
 e13 = Entry(master, width=30)
-e13.grid(row=13, column=1)
+e13.grid(row=12, column=1)
+
+inp.Label(master, text="meanfun").grid(row=13)
+e14 = Entry(master, width=30)
+e14.grid(row=13, column=1)
+
+inp.Label(master, text="meanfun").grid(row=14)
+e15 = Entry(master, width=30)
+e15.grid(row=14, column=1)
+
+inp.Label(master, text="maxfun").grid(row=15)
+e16 = Entry(master, width=30)
+e16.grid(row=15, column=1)
+
+inp.Label(master, text="meandom").grid(row=16)
+e17 = Entry(master, width=30)
+e17.grid(row=16, column=1)
+
+inp.Label(master, text="mindom").grid(row=17)
+e18 = Entry(master, width=30)
+e18.grid(row=17, column=1)
+
+inp.Label(master, text="maxdom").grid(row=18)
+e20 = Entry(master, width=30)
+e20.grid(row=18, column=1)
+
+inp.Label(master, text="dfrange").grid(row=19)
+e21 = Entry(master, width=30)
+e21.grid(row=19, column=1)
 
 def predict():
 	age = int(e1.get())
@@ -68,3 +102,4 @@ def predict():
 
 inp.Button(master,text ="Dự đoán", command = predict,activebackground='green',
           justify='center').grid(row=12, column=1)
+master.mainloop()
