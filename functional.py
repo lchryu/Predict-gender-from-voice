@@ -1,5 +1,6 @@
 import numpy as np
 import tkinter as inp
+from tkinter import messagebox
 from tkinter.ttk import *
 import os
 def Predict_from_user_data(main_pca, mainModel):
@@ -91,9 +92,9 @@ def Predict_from_user_data(main_pca, mainModel):
         e20 = Entry(win, width=30)
         e20.grid(row=19, column=1)
 
-        inp.Label(win, text="Dự đoán: ").grid(row=21)
-        e21 = Entry(win, width=30)
-        e21.grid(row=21, column=1)
+        # inp.Label(win, text="Dự đoán: ").grid(row=21)
+        # e21 = Entry(win, width=30)
+        # e21.grid(row=21, column=1)
 
         def predict():
             x1 = float(e1.get())
@@ -120,8 +121,8 @@ def Predict_from_user_data(main_pca, mainModel):
                                         x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]])
             data_new_pca = main_pca.transform(data_new)
             kq = mainModel.predict(data_new_pca)[0]
-            e21.insert(0, kq)
-
+            # e21.insert(0, kq)
+            messagebox.showinfo("Predict", f"This person's gender is {kq}")
         inp.Button(win,text ="Dự đoán", command = predict,activebackground='green',
                 justify='center', bg = 'green', fg = 'white').grid(row=20, column=1)
         win.mainloop()
